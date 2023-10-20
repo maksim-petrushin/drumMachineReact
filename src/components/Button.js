@@ -5,7 +5,8 @@ class Button extends React.Component{
         let src = this.props.sound;
         const sound = new Howl({
             src,
-            html5: true
+            html5: true,
+            volume: parseFloat(this.props.volume)/100
         })
         sound.play();
         this.props.handleSound(this.props.letter);

@@ -99,19 +99,32 @@ body {
 }
 .statusBar{
   border: 2px solid snow;
+  background-color: gray;
+  text-align: center;
   height: 30px;
   width: 150px;
   position: absolute;
   left:30%;
   top: 280px;
 }
-.volumeBar{
-  border: 2px solid violet;
-  height: 10px;
-  width: 200px;
+.statusText{
   position: absolute;
-  left:25%;
-  top: 340px;
+  width: 400px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
 }
+
+.volume{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+}
+
 
 

@@ -14,10 +14,29 @@ class App extends React.Component{
     super(props);
     this.state = {
       power: " on",
-      latestSound: ""
+      latestSound: "",
+      volume: 50,
+      soundChange: "no"
     }
     this.handlePower = this.handlePower.bind(this);
     this.handleSound = this.handleSound.bind(this);
+    this.handleSlide = this.handleSlide.bind(this);
+    this.delay = this.delay.bind(this);
+  }
+  delay = async (time) => {
+    await new Promise(() => setTimeout(
+      ()=>{this.setState({
+        soundChange: "no"
+      })}, time))
+  }
+  handleSlide(event){
+    
+    const val = event.target.value;
+    this.setState({
+      volume: val,
+      soundChange: "yes"
+    })
+    this.delay(1000);
   }
   handlePower(event){
     console.log(event.target.name)
@@ -69,15 +88,15 @@ class App extends React.Component{
     <div className="App">
       <div className="logo"></div>
       <div className="buttonContainer">
-      <Button sound={sound1} letter={"Q"} power={this.state.power} handleSound={this.handleSound}/>
-      <Button sound={sound2} letter={"W"} power={this.state.power} handleSound={this.handleSound}/>
-      <Button sound={sound3} letter={"E"} power={this.state.power} handleSound={this.handleSound}/>
-      <Button sound={sound4} letter={"A"} power={this.state.power} handleSound={this.handleSound}/>
-      <Button sound={sound5} letter={"S"} power={this.state.power} handleSound={this.handleSound}/>
-      <Button sound={sound6} letter={"D"} power={this.state.power} handleSound={this.handleSound}/>
-      <Button sound={sound7} letter={"Z"} power={this.state.power} handleSound={this.handleSound}/>
-      <Button sound={sound8} letter={"X"} power={this.state.power} handleSound={this.handleSound}/>
-      <Button sound={sound9} letter={"C"} power={this.state.power} handleSound={this.handleSound}/>
+      <Button sound={sound1} letter={"Q"} power={this.state.power} handleSound={this.handleSound} volume={this.state.volume}/>
+      <Button sound={sound2} letter={"W"} power={this.state.power} handleSound={this.handleSound} volume={this.state.volume}/>
+      <Button sound={sound3} letter={"E"} power={this.state.power} handleSound={this.handleSound} volume={this.state.volume}/>
+      <Button sound={sound4} letter={"A"} power={this.state.power} handleSound={this.handleSound} volume={this.state.volume}/>
+      <Button sound={sound5} letter={"S"} power={this.state.power} handleSound={this.handleSound} volume={this.state.volume}/>
+      <Button sound={sound6} letter={"D"} power={this.state.power} handleSound={this.handleSound} volume={this.state.volume}/>
+      <Button sound={sound7} letter={"Z"} power={this.state.power} handleSound={this.handleSound} volume={this.state.volume}/>
+      <Button sound={sound8} letter={"X"} power={this.state.power} handleSound={this.handleSound} volume={this.state.volume}/>
+      <Button sound={sound9} letter={"C"} power={this.state.power} handleSound={this.handleSound} volume={this.state.volume}/>
       </div>
       <div className="powerSwitch">
         <h5 className="powerText">Power</h5>
@@ -87,8 +106,9 @@ class App extends React.Component{
           </div>
         </button>
       </div>
-      <div className="statusBar" >{this.state.latestSound}</div>
-      <div className="volumeBar"></div>
+      <div className="statusBar" ><h3 className="statusText"> {(this.state.soundChange==="yes")?"Volume: "+this.state.volume:this.state.latestSound}</h3></div>
+      <input type="range" min="1" max="100" className="volume" onChange={this.handleSlide}/>
+      
     </div>
   );
   }
