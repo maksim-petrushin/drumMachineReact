@@ -12,32 +12,48 @@ import Button from "./components/Button";
 class App extends React.Component{
   constructor(props){
     super(props);
+    this.state = {
+      power: " on",
+    }
+    this.handlePower = this.handlePower.bind(this);
+  }
+  handlePower(){
+    this.setState((state)=>{
+      if(state.power === " on"){
+        return {
+          power: " off"
+        }
+      }
+      else if(state.power === " off"){
+        return {
+          power: " on"
+        }
+      }
+    })
   }
   render(){
     return (
     <div className="App">
       <div className="logo"></div>
       <div className="buttonContainer">
-      <Button sound={sound1}
-      letter={"Q"}/>
-      <Button sound={sound2}
-      letter={"W"}/>
-      <Button sound={sound3}
-      letter={"E"}/>
-      <Button sound={sound4}
-      letter={"A"}/>
-      <Button sound={sound5}
-      letter={"S"}/>
-      <Button sound={sound6}
-      letter={"D"}/>
-      <Button sound={sound7}
-      letter={"Z"}/>
-      <Button sound={sound8}
-      letter={"X"}/>
-      <Button sound={sound9}
-      letter={"C"}/>
+      <Button sound={sound1} letter={"Q"} power={this.state.power}/>
+      <Button sound={sound2} letter={"W"} power={this.state.power}/>
+      <Button sound={sound3} letter={"E"} power={this.state.power}/>
+      <Button sound={sound4} letter={"A"} power={this.state.power}/>
+      <Button sound={sound5} letter={"S"} power={this.state.power}/>
+      <Button sound={sound6} letter={"D"} power={this.state.power}/>
+      <Button sound={sound7} letter={"Z"} power={this.state.power}/>
+      <Button sound={sound8} letter={"X"} power={this.state.power}/>
+      <Button sound={sound9} letter={"C"} power={this.state.power}/>
       </div>
-      <div className="powerSwitch"></div>
+      <div className="powerSwitch">
+        <h5 className="powerText">Power</h5>
+        <button onClick={this.handlePower}>
+          <div className="powerContainer">
+            <div className={"switch"+this.state.power}></div>
+          </div>
+        </button>
+      </div>
       <div className="statusBar"></div>
       <div className="volumeBar"></div>
     </div>

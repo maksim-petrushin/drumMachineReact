@@ -10,7 +10,7 @@ class Button extends React.Component{
     }
     render(){
         return (
-            <button className="drumButton" onClick={()=>{this.soundPlay(this.props.sound)}}>
+            <button className="drumButton" onClick={()=>{(this.props.power === " on") && this.soundPlay(this.props.sound)}}>
             <h1>{this.props.letter}</h1>
         </button>
         );
