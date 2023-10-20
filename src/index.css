@@ -23,6 +23,12 @@ body {
 
   position:relative;
 }
+.App-logo{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  height: 6vmin;
+}
 .logo{
   position: absolute;
   right: 0px;
@@ -34,7 +40,6 @@ body {
   position: absolute;
   left:25%;
   top: 30px;
-  border: 2px solid blue;
   height:200px;
   width:200px;
 
@@ -57,7 +62,6 @@ body {
 
 }
 .powerSwitch{
-  border: 2px solid purple;
   width: 40px;
   height: 30px;
   position: absolute;

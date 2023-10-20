@@ -9,6 +9,7 @@ import sound8 from "./components/sound8.mp3"
 import sound9 from "./components/sound9.mp3"
 import React from "react"
 import Button from "./components/Button";
+import logo from'./mp16logo.png';
 class App extends React.Component{
   constructor(props){
     super(props);
@@ -86,7 +87,7 @@ class App extends React.Component{
   render(){
     return (
     <div className="App">
-      <div className="logo"></div>
+      <img src={logo} className="App-logo" alt="logo" />
       <div className="buttonContainer">
       <Button sound={sound1} letter={"Q"} power={this.state.power} handleSound={this.handleSound} volume={this.state.volume}/>
       <Button sound={sound2} letter={"W"} power={this.state.power} handleSound={this.handleSound} volume={this.state.volume}/>
