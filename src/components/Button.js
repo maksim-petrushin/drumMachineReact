@@ -1,22 +1,20 @@
-
-import { useEffect, useState } from "react";
-const Button = (props) => {
-    var audio = new Audio(props.sound);
-    const [value, setValue] = useState(0);
-    const play = () =>{
-        
-        audio.play();
-    };
-    useEffect(()=>{
-        play();
-        
-
-    }, [value])
-    return (
-        <button className="drumButton" onClick={()=>{setValue(value+1)}}>
-            <h1>{props.letter}</h1>
+import React from "react";
+import {Howl} from "howler"
+class Button extends React.Component{
+    soundPlay = (src) =>{
+        const sound = new Howl({
+            src,
+            html5: true
+        })
+        sound.play();
+    }
+    render(){
+        return (
+            <button className="drumButton" onClick={()=>{this.soundPlay(this.props.sound)}}>
+            <h1>{this.props.letter}</h1>
         </button>
-    );
+        );
+    }
 }
 
 export default Button;
