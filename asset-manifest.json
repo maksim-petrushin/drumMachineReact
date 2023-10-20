@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/drumMachineReact/static/css/main.b28459a5.css",
+    "main.js": "/drumMachineReact/static/js/main.f6b2ec6f.js",
+    "static/js/787.e9bed731.chunk.js": "/drumMachineReact/static/js/787.e9bed731.chunk.js",
+    "static/media/sound8.mp3": "/drumMachineReact/static/media/sound8.72881f4bf80d341da208.mp3",
+    "static/media/sound1.mp3": "/drumMachineReact/static/media/sound1.cb8d95b6caf027812d3b.mp3",
+    "static/media/mp16logo.png": "/drumMachineReact/static/media/mp16logo.6427aef33704e2304298.png",
+    "static/media/sound2.mp3": "/drumMachineReact/static/media/sound2.4ed25e5b07da91b794d7.mp3",
+    "static/media/sound3.mp3": "/drumMachineReact/static/media/sound3.4c4d3fd017dfed721765.mp3",
+    "static/media/sound4.mp3": "/drumMachineReact/static/media/sound4.0c29815eb40bbe7d4d7b.mp3",
+    "static/media/sound6.mp3": "/drumMachineReact/static/media/sound6.5f33c02936f6ec6f8199.mp3",
+    "static/media/sound5.mp3": "/drumMachineReact/static/media/sound5.faf5d12a1a4a7ffacf09.mp3",
+    "static/media/sound7.mp3": "/drumMachineReact/static/media/sound7.6dc44dc15fca60d9d594.mp3",
+    "static/media/sound9.mp3": "/drumMachineReact/static/media/sound9.0b159bd307a31937b138.mp3",
+    "index.html": "/drumMachineReact/index.html",
+    "main.b28459a5.css.map": "/drumMachineReact/static/css/main.b28459a5.css.map",
+    "main.f6b2ec6f.js.map": "/drumMachineReact/static/js/main.f6b2ec6f.js.map",
+    "787.e9bed731.chunk.js.map": "/drumMachineReact/static/js/787.e9bed731.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b28459a5.css",
+    "static/js/main.f6b2ec6f.js"
+  ]
+}
